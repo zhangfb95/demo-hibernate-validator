@@ -5,8 +5,43 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.zhangfb95.demo</groupId>
-    <artifactId>demo-hibernate-validator</artifactId>
+    <artifactId>demo-hv</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>helloworld</module>
+    </modules>
 
+    <properties>
+        <hibernate-validator.version>5.2.4.Final</hibernate-validator.version>
+        <javax.el.version>3.0.0</javax.el.version>
+        <junit.version>4.12</junit.version>
+        <lombok.version>1.16.8</lombok.version>
+    </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate-validator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish</groupId>
+                <artifactId>javax.el</artifactId>
+                <version>${javax.el.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <scope>test</scope>
+                <version>${junit.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
